@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "../context/ParallaxProvider";;
+import Navbar from "@/components/Navbar";
+import { ShowNavbarProvider } from "@/context/NavbarContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Hello Quantum World",
@@ -15,9 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` antialiased`}
+        className={`antialiased`}
       >
-        <Providers>{children}</Providers>
+        <ThemeProvider>
+          <ShowNavbarProvider>
+            <Navbar />
+            {children}
+          </ShowNavbarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

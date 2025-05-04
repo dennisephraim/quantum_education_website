@@ -18,20 +18,40 @@ function toSuperscript(n: number): string {
 }
 
 const options = {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+            display: true,
+            text: "*Size of data point indicates connectivity; larger means denser connectivity",
+            position: "bottom" as const,
+            padding: 10
+        }
+    },
     scales: {
       x: {
+        border: {
+            color: '#B0B9BF',
+        },
         type: "logarithmic" as const,
         position: "bottom" as const,
         title: {
             display: true,
-            text: ["Number of Physical Qubits", "System Size"]
+            text: ["Number of Physical Qubits", "System Size"],
         },
         min: 1,
         max: 100000,
+        grid: {
+            display: true,
+            color: '#B0B9BF',
+            lineWidth: 3,
+            drawBorder: false, 
+          },
+        
         ticks: {
             stepSize: 1,
             fixedStep: 1,
             maxTicksLimit: 6,
+            padding: 10,
             callback: function (tickValue: string | number) {
                 if (typeof tickValue === 'number') {
                     const exponent = Math.log10(tickValue);
@@ -42,20 +62,28 @@ const options = {
             },
         }
       },
-      y: { 
+      y: {
+        border: {
+            display: false
+        },
         type: "logarithmic" as const, 
         position: "left" as const, 
         title: { 
-            display: true, 
+            display: true,
             text: ["Error Tolerance", "Average two-qubit gate error rate"]
         }, 
         min: 0.0001,
         max: 1,
         reverse: true,
+        grid: {
+            display: false,
+            border: false,
+        },
         ticks: {
             stepSize: 1,
             fixedStep: 1,
             maxTicksLimit: 5,
+            padding: 10,
             callback: function (tickValue: string | number) {
                 if (typeof tickValue === 'number') {
                     const exponent = Math.log10(tickValue);
@@ -76,7 +104,7 @@ export default function DotPlot(data: ChartData<"scatter", (number | Point | nul
             animate={{opacity: 1, x: 0}}
             transition={{ duration: 0.5}}
             viewport={{ once: false }}
-            className="bg-white/80 backdrop-blur-sm p-4 h-[50%] w-[40%] right-30 fixed top-40 items-center rounded-lg shadow-lg"
+            className="p-4 h-[60%] w-[40%] right-50 fixed top-36 items-center rounded-lg"
         >
             <Scatter 
                 data={data}

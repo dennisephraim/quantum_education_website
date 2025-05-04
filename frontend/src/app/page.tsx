@@ -1,6 +1,5 @@
 "use client"
 
-import Timeline from "@/components/Timeline"
 import CustomSection from "@/components/CustomSection"
 import { useState } from "react"
 import Intro from "@/components/Intro"
@@ -29,7 +28,7 @@ export default function Home() {
   const sectionData = {
     "Superconducting QPU" : {
       topic: "Superconducting QPU",
-      content: "Superconducting quantum processing units (QPUs) are among the most actively developed quantum technologies, with companies like IBM and Google leading the way. These QPUs use superconducting circuits cooled to near absolute zero to enable qubit operations. They benefit from rapid gate speeds and relatively straightforward integration with classical electronics. Recent improvements in coherence times and error rates suggest a promising scaling trend, often referred to as Schoelkopf's Law, though challenges remain in maintaining low noise and high fidelity as the number of qubits increases.",
+      content: "Superconducting quantum processing units (QPUs) are among the most actively developed quantum technologies, with companies like IBM and Google leading the way. These QPUs use superconducting circuits cooled to near absolute zero to enable qubit operations. They benefit from rapid gate speeds and relatively straightforward integration with classical electronics. Recent improvements in coherence times and error rates suggest a promising scaling trend.",
       data: superConductingData,
       pointStyle: 'rect',
       backgroundColor: 'rgba(54,162,235,0.8)',
@@ -37,7 +36,7 @@ export default function Home() {
     },
     "Trapped Ion QPU" : {
       topic: "Trapped Ion QPU",
-      content: "Trapped ion QPUs operate by confining ions using electromagnetic fields and manipulating their quantum states with laser pulses. They are known for their high-fidelity operations and long coherence times, making them excellent candidates for precise quantum computations. Companies like IonQ have developed systems with dozens of trapped ions arranged in tape-like structures. However, these systems can be slower than superconducting counterparts due to the nature of ion manipulation, although they offer superior connectivity and control at smaller scales.",
+      content: "Trapped ion QPUs operate by confining ions using electromagnetic fields and manipulating their quantum states with laser pulses. They are known for their high-fidelity operations and long coherence times, making them excellent candidates for precise quantum computations. Companies like IonQ have developed systems with dozens of trapped ions arranged in tape-like structures.",
       data: trappedIonData,
       pointStyle: 'circle',
       backgroundColor: 'rgba(255,159,64,0.8)',
@@ -54,7 +53,7 @@ export default function Home() {
       backgroundColor: content?.backgroundColor,
       pointRadius: content?.pointRadius,
     }]
-  }
+  }  
 
   return (
     <div className="font-serif">
