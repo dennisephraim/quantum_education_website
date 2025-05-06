@@ -1,4 +1,3 @@
-// components/AutoScrollTimeline.tsx
 "use client"
 
 import { motion } from "motion/react"
@@ -15,7 +14,7 @@ const timelineItems = [
   { year: 2025, img: "/Picture8.jpg" },
 ]
 
-export default function AutoScrollTimeline() {
+export default function Timeline() {
   const items = [...timelineItems, ...timelineItems]
   const connectorLen = 40
 

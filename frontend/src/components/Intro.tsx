@@ -16,7 +16,7 @@ export default function Intro() {
         onViewportEnter={() => setShowNavbar(false)}
     >
       <div className="absolute inset-0" />
-      <div className="absolute top-16 left-12 w-72 h-72 rounded-full bg-white dark:bg-white/10  animate-ping" />
+      <div className="absolute top-16 left-12 w-72 h-72 rounded-full bg-white dark:bg-white/10 animate-pulse" />
       <div className="absolute bottom-20 right-16 w-56 h-56 rounded-full bg-white dark:bg-white/5 animate-pulse" />
       <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-white dark:bg-white/40 animate-ping" />
       <motion.div

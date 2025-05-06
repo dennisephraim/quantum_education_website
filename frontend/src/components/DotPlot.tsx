@@ -2,20 +2,7 @@ import 'chart.js/auto';
 import { Scatter } from 'react-chartjs-2';
 import { motion } from 'motion/react';
 import { ChartData, Point } from 'chart.js/auto';
-
-const superscriptMap: Record<string,string> = {
-    '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
-    '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
-    '-': '⁻'
-};
-  
-function toSuperscript(n: number): string {
-    // turn -3 into "⁻³", 4 into "⁴", etc.
-    return String(n)
-      .split('')
-      .map(ch => superscriptMap[ch] || ch)
-      .join('');
-}
+import { toSuperscript } from '@/utils/helpers';
 
 const options = {
     maintainAspectRatio: false,
@@ -24,7 +11,23 @@ const options = {
             display: true,
             text: "*Size of data point indicates connectivity; larger means denser connectivity",
             position: "bottom" as const,
-            padding: 10
+            padding: 10,
+            font: {
+                size: 18,
+                weight: "normal" as const,
+                family: "'Roboto', serif"
+            }
+        },
+        
+        legend: {
+            labels: {
+                usePointStyle: true,
+                font: {
+                    size: 20,
+                    weight: "bold" as const,
+                    family: "'Roboto', serif"
+                }
+            },
         }
     },
     scales: {
@@ -37,15 +40,18 @@ const options = {
         title: {
             display: true,
             text: ["Number of Physical Qubits", "System Size"],
+            font: {
+                size: 16,
+                weight: "normal" as const,
+                family: "'Roboto', serif"
+            }
         },
         min: 1,
         max: 100000,
         grid: {
-            display: true,
-            color: '#B0B9BF',
-            lineWidth: 3,
+            display: false,
             drawBorder: false, 
-          },
+        },
         
         ticks: {
             stepSize: 1,
@@ -70,14 +76,21 @@ const options = {
         position: "left" as const, 
         title: { 
             display: true,
-            text: ["Error Tolerance", "Average two-qubit gate error rate"]
+            text: ["Error Tolerance", "Average two-qubit gate error rate"],
+            font: {
+                size: 16,
+                weight: "normal" as const,
+                family: "'Roboto', serif",
+            }
         }, 
         min: 0.0001,
         max: 1,
         reverse: true,
         grid: {
-            display: false,
-            border: false,
+            display: true,
+            color: '#B0B9BF',
+            lineWidth: 2,
+            drawBorder: false, 
         },
         ticks: {
             stepSize: 1,
