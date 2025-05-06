@@ -47,6 +47,7 @@ This repository houses both the frontend and backend code for a quantum-educatio
    git clone https://github.com/dennisephraim/quantum_education_website.git
    cd quantum_education_website
 2. Install dependencies for both services
+   ```bash
    # From the root directory
    npm run install:all
 
