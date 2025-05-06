@@ -46,9 +46,10 @@ export default function Home() {
   return (
     <div className="font-serif">
       <Intro />
+      {/* <div className="h-[100vh]"></div> */}
       <CustomSection data={data["Superconducting QPU"]} updateStickyContent={setChosenContent} />
       <CustomSection data={data["Trapped Ion QPU"]} updateStickyContent={setChosenContent} />
-      {chosenContent && <DotPlot {...chartdata} />}
+      <DotPlot {...chartdata} />
     </div>
   )
 }

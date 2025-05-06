@@ -1,4 +1,4 @@
-import express from 'express'
+import express, {Request, Response} from 'express'
 import fs from 'fs'
 import cors from 'cors'
 import path from 'path'
@@ -11,7 +11,7 @@ app.use(cors())
 
 const DATA_FILE = path.join(__dirname, 'data.json')
 
-app.get('/getData', (_req, _res) => {
+app.get('/getData', (_req: Request, _res: Response) => {
   try {
     const raw = fs.readFileSync(DATA_FILE, 'utf-8')
     const data = JSON.parse(raw)

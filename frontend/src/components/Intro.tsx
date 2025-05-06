@@ -10,7 +10,7 @@ export default function Intro() {
     <motion.div className="relative h-screen w-full z-10 bg-[#ededed] dark:bg-[#1d1d1d]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1}}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
         viewport={{once: false, amount: 0.7}}
         onViewportLeave={() => setShowNavbar(true)}
         onViewportEnter={() => setShowNavbar(false)}
