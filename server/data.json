@@ -1,0 +1,33 @@
+{
+  "Superconducting QPU" : {
+    "topic": "Superconducting QPU",
+    "content": "Superconducting quantum processing units (QPUs) are among the most actively developed quantum technologies, with companies like IBM and Google leading the way. These QPUs use superconducting circuits cooled to near absolute zero to enable qubit operations. They benefit from rapid gate speeds and relatively straightforward integration with classical electronics. Recent improvements in coherence times and error rates suggest a promising scaling trend.",
+    "pointStyle": "rect",
+    "backgroundColor": "rgba(54,162,235,0.8)",
+    "pointRadius": 8,
+    "data": [
+      { "x": 5, "y": 0.1, "label": "2006" },
+      { "x": 20, "y": 0.02, "label": "2009" },
+      { "x": 50, "y": 0.03, "label": "2012" },
+      { "x": 100, "y": 0.03, "label": "2014" },
+      { "x": 127, "y": 0.0035, "label": "2019" },
+      { "x": 433, "y": 0.002, "label": "2022" },
+      { "x": 1121, "y": 0.001, "label": "2024" }
+    ]      
+  },
+  "Trapped Ion QPU" : {
+    "topic": "Trapped Ion QPU",
+    "content": "Trapped ion QPUs operate by confining ions using electromagnetic fields and manipulating their quantum states with laser pulses. They are known for their high-fidelity operations and long coherence times, making them excellent candidates for precise quantum computations. Companies like IonQ have developed systems with dozens of trapped ions arranged in tape-like structures.",
+    "pointStyle": "circle",
+    "backgroundColor": "rgba(255,159,64,0.8)",
+    "pointRadius": 8,
+    "data": [
+      { "x": 3, "y": 0.4, "label": "2003" },
+      { "x": 10, "y": 0.08, "label": "2005" },
+      { "x": 25, "y": 0.07, "label": "2016" },
+      { "x": 50, "y": 0.025, "label": "2018" },
+      { "x": 100, "y": 0.001, "label": "2023" },
+      { "x": 200, "y": 0.0025, "label": "2025" }
+    ]
+  }
+}
