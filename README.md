@@ -1,1 +1,1 @@
-# quantum_education_website
+# Quantum Education Website
