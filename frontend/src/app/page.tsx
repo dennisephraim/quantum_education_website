@@ -47,11 +47,8 @@ export default function Home() {
 
   return (
     <div className="font-serif">
-      <Intro />
-      <motion.div
-        onViewportEnter={() => setShowDotPlot(true)}
-        onViewportLeave={() => setShowDotPlot(false)}
-      >
+      <Intro setShowDotPlot={setShowDotPlot} />
+      <motion.div>
         <CustomSection data={data["Superconducting QPU"]} updateStickyContent={setChosenContent} />
         <CustomSection data={data["Trapped Ion QPU"]} updateStickyContent={setChosenContent} />
       </motion.div>

@@ -15,7 +15,7 @@ export default function CustomSection({ data, updateStickyContent }: CustomSecti
         )}
         className="bg-[#ededed] dark:bg-[#1d1d1d] p-4 w-100 flex text-center justify-center md:ml-[17%] flex-col items-center "
       >
-        <h1 className="text-center text-sm md:text-sm lg:text-2xl">{data.topic}</h1>
+        <h3 className="text-center text-sm md:text-sm lg:text-2xl">{data.topic}</h3>
         <p className="text-xs md:text-sm lg:text-lg ">{data.content}</p>
       </motion.div>
     </motion.section>

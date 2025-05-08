@@ -1,8 +1,8 @@
 "use client"
 import { motion } from 'motion/react';
-import { useShowNavbarContext } from '@/context/NavbarContext';
 import ToggleThemeButton from './ToggleThemeButton';
-import { ArrowDown } from 'lucide-react'
+import CardRow from './CardRow';
+import { useShowNavbarContext } from '@/context/NavbarContext';
 
 const container = {
   hidden: { opacity: 0 },
@@ -19,18 +19,28 @@ const item = {
   show: { opacity: 1, y: 0 }
 }
 
-export default function Intro() {
-  const { showNavbar,setShowNavbar } = useShowNavbarContext()
+interface IntroProps {
+  setShowDotPlot: (value: boolean) => void;
+}
+
+export default function Intro({ setShowDotPlot }: IntroProps) {
   const text = "<Hello | Quantum | World>"
+  const { showNavbar, setShowNavbar } = useShowNavbarContext()
 
   return (
-    <motion.div className={`relative h-[100vh] w-full bg-[#ededed] dark:bg-[#1d1d1d] ${showNavbar ? 'z-0' : 'z-20'}`}
+    <motion.div className={`relative h-[200vh] w-full bg-[#ededed] dark:bg-[#1d1d1d] ${showNavbar ? 'z-0' : 'z-20'}`}
       initial="hidden"
       whileInView="show"
       transition={{ duration: 0.3 }}
-      viewport={{once: false, amount: 0.7}}
-      onViewportLeave={() => setShowNavbar(true)}
-      onViewportEnter={() => setShowNavbar(false)}
+      viewport={{once: false, amount: 0.3}}
+      onViewportEnter={() => { 
+        setShowDotPlot(false)
+        setShowNavbar(false)
+      }}
+      onViewportLeave={() => {
+        setShowNavbar(true)
+        setShowDotPlot(true)
+      }}
     >
       <div className="absolute inset-0" />
       <div className="absolute top-16 left-12 w-72 h-72 rounded-full bg-white dark:bg-white/10 animate-pulse" />
@@ -38,26 +48,50 @@ export default function Intro() {
       <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-white dark:bg-white/40 animate-ping" />
       <motion.div
         variants={container}
-        className='relative flex flex-col gap-y-[35%] items-center h-[100%] w-full text-center text-2xl md:text-4xl lg:text-6xl font-mono'
+        initial="hidden"
+        whileInView="show"
+        transition={{ duration: 0.3 }}
+        viewport={{once: false}}
+        className='flex flex-col gap-y-[35%] items-center h-[100vh] w-full bottom-0 text-center text-2xl md:text-4xl lg:text-6xl font-mono'
       >
         <div className='px-8 py-6 flex justify-end w-full'>
           <ToggleThemeButton />
         </div>
-        <div className="flex space-x-2">
+        <motion.h1 
+          transition={{once: false, duration: 0.5}} 
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: false, amount: 0.5, margin: "-100px 0px 10px 0px"}}
+          className="flex space-x-2"
+        >
           {text.split(" ").map((word, i) => (
             <motion.span key={i} variants={item}>
               {word}
             </motion.span>
           ))}
-        </div>
-        <div
-          className="absolute bottom-8 right-0 transform -translate-x-1/2 text-sm flex gap-x-4 animate-bounce"
-        >
-          Scroll to learn more!
-          <ArrowDown size={20} />
-        </div>
-
+        </motion.h1>
       </motion.div>
+      <motion.h2
+        transition={{ delay: 0.3 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1}}
+        viewport={{ once: false, amount: 0.5, margin: "-100px 0px 100px 0px" }}
+        className='justify-center flex pb-20 text-3xl'
+      >
+        History of Emerging Quantum Computers
+      </motion.h2>
+      <CardRow />
+      <motion.p 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{once: false, amount: 1, margin: "-30px 0px 50px 0px"}}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className='px-[20%] pt-20 text-center text-xs md:text-sm lg:text-lg'
+      >
+        Quantum Technologies have been improved over the years but there is a gap 
+        between the current developed Technologies and the requirements for the applications that use them. 
+        The gap is in terms of the Number of Qubits available and the Error rate.
+      </motion.p>
     </motion.div>
   );
 }
