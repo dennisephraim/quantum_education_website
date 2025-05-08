@@ -6,13 +6,16 @@
     "backgroundColor": "rgba(54,162,235,0.8)",
     "pointRadius": 8,
     "data": [
-      { "x": 5, "y": 0.1, "label": "2006" },
-      { "x": 20, "y": 0.02, "label": "2009" },
-      { "x": 50, "y": 0.03, "label": "2012" },
-      { "x": 100, "y": 0.03, "label": "2014" },
-      { "x": 127, "y": 0.0035, "label": "2019" },
-      { "x": 433, "y": 0.002, "label": "2022" },
-      { "x": 1121, "y": 0.001, "label": "2024" }
+      { "x": 3, "y": 0.1, "label": "2006", "connectivity": 2 },
+      { "x": 5, "y": 0.02, "label": "2009", "connectivity": 2 },
+      { "x": 6, "y": 0.009, "label": "2012", "connectivity": 2 },
+      { "x": 12, "y": 0.008, "label": "2014", "connectivity": 2 },
+      { "x": 55, "y": 0.03, "label": "2018", "connectivity": 2 },
+      { "x": 88, "y": 0.002, "label": "2019", "connectivity": 2 },
+      { "x": 78, "y": 0.0035, "label": "2020", "connectivity": 2 },
+      { "x": 95, "y": 0.02, "label": "2020", "connectivity": 2 },
+      { "x": 890, "y": 0.003, "label": "2022", "connectivity": 2 },
+      { "x": 1021, "y": 0.001, "label": "2024", "connectivity": 2 }
     ]      
   },
   "Trapped Ion QPU" : {
@@ -22,12 +25,14 @@
     "backgroundColor": "rgba(255,159,64,0.8)",
     "pointRadius": 8,
     "data": [
-      { "x": 3, "y": 0.4, "label": "2003" },
-      { "x": 10, "y": 0.08, "label": "2005" },
-      { "x": 25, "y": 0.07, "label": "2016" },
-      { "x": 50, "y": 0.025, "label": "2018" },
-      { "x": 100, "y": 0.001, "label": "2023" },
-      { "x": 200, "y": 0.0025, "label": "2025" }
+      { "x": 3, "y": 0.2, "label": "2003", "connectivity": 2 },
+      { "x": 8, "y": 0.3, "label": "2005", "connectivity": 2 },
+      { "x": 9, "y": 0.0009, "label": "2015", "connectivity": 2 },
+      { "x": 10, "y": 0.03, "label": "2016", "connectivity": 2 },
+      { "x": 37, "y": 0.025, "label": "2018", "connectivity": 2 },
+      { "x": 11, "y": 0.009, "label": "2020", "connectivity": 2 },
+      { "x": 89, "y": 0.001, "label": "2023", "connectivity": 2 },
+      { "x": 220, "y": 0.0005, "label": "2025", "connectivity": 2 }
     ]
   }
 }

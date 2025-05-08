@@ -16,17 +16,17 @@ export default function Navbar() {
                         justify-center mt-4 rounded-lg"
             >
                 <AnimatePresence>
-                    <motion.div
+                    <motion.section
                         initial={{ opacity: 0, y: 20, scale: 1 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.6 }}
-                        className="font-mono text-lg flex w-full items-center p-3 justify-between"
+                        className="font-mono text-xs xs:text-sm md:text-lg flex w-full items-center flex-row p-3 justify-between"
                     >
                         <div>
                             {"<Hello | Quantum | World>"}
                         </div>
                         <ToggleThemeButton />
-                    </motion.div>
+                    </motion.section>
                 </AnimatePresence>
             </div>
         </div>

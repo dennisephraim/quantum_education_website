@@ -4,25 +4,20 @@ export interface QPUDataPoint {
     label: string
 }
 
+export interface ChartData {
+    topic: string
+    content: string
+    data: QPUDataPoint[]
+    pointRadius: number
+    backgroundColor: string
+    pointStyle: string
+}
+
 export interface QPUCollection {
-    [qpuName: string]: {
-        topic: string
-        content: string
-        pointStyle: string
-        backgroundColor: string
-        pointRadius: number
-        data: QPUDataPoint[]
-    }
+    [qpuName: string]: ChartData
 }
 
 export interface CustomSectionProps {
-    data: {
-        topic: string;
-        content: string;
-        data: { x: number; y: number }[];
-        pointRadius: number; 
-        backgroundColor: string; 
-        pointStyle: string;
-    };
-    updateStickyContent: React.Dispatch<React.SetStateAction<string | undefined>>
+    data: ChartData;
+    updateStickyContent?: React.Dispatch<React.SetStateAction<string | undefined>>
 }

@@ -5,10 +5,12 @@ import { useState, useEffect } from "react"
 import Intro from "@/components/Intro"
 import DotPlot from "@/components/DotPlot"
 import { QPUCollection } from "@/types/components"
+import { motion } from "motion/react"
 
 export default function Home() {
   const [data, setData] = useState<QPUCollection>()
   const [chosenContent, setChosenContent] = useState<string>()   
+  const [ showDotPlot, setShowDotPlot ] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +29,7 @@ export default function Home() {
     fetchData();
   }, [])
 
-  if (!data) return
+  if (!data) return null
 
   let chartdata
   chosenContent ? chartdata = {
@@ -46,10 +48,14 @@ export default function Home() {
   return (
     <div className="font-serif">
       <Intro />
-      {/* <div className="h-[100vh]"></div> */}
-      <CustomSection data={data["Superconducting QPU"]} updateStickyContent={setChosenContent} />
-      <CustomSection data={data["Trapped Ion QPU"]} updateStickyContent={setChosenContent} />
-      <DotPlot {...chartdata} />
+      <motion.div
+        onViewportEnter={() => setShowDotPlot(true)}
+        onViewportLeave={() => setShowDotPlot(false)}
+      >
+        <CustomSection data={data["Superconducting QPU"]} updateStickyContent={setChosenContent} />
+        <CustomSection data={data["Trapped Ion QPU"]} updateStickyContent={setChosenContent} />
+      </motion.div>
+      {showDotPlot && <DotPlot {...chartdata} />}
     </div>
   )
 }
