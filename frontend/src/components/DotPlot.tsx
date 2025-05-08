@@ -225,7 +225,7 @@ export default function DotPlot(data: ChartData<"scatter", (number | Point | nul
                 transition={{ duration: 0.5}}
                 viewport={{ once: false }}
                 exit={{opacity: 0, x: -60}}
-                className={`p-4 lg:h-[70%] lg:w-[40%] w-[100%] h-[100%] lg:right-50 lg:top-33 lg:fixed relative justify-center items-center rounded-lg `}
+                className={`p-4 lg:h-[70%] lg:w-[40%] w-[90vw] h-[60vh] lg:right-50 lg:top-33 lg:fixed relative justify-center items-center rounded-lg `}
             >
                 <Scatter 
                     data={chartData}
