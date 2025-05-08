@@ -13,9 +13,6 @@ An interactive, full-stack platform for learning the fundamentals of quantum com
   - [Backend (Server)](#backend-server)  
   - [Frontend](#frontend)  
 - [Project Structure](#project-structure)  
-- [Contributing](#contributing)  
-- [License](#license)  
-- [Contact](#contact)  
 
 ## About
 
@@ -23,9 +20,8 @@ This repository houses both the frontend and backend code for a quantum-educatio
 
 ## Features
 
-- **Interactive Tutorials** – Step-by-step lessons on quantum concepts  
-- **Live Simulations** – Run simple quantum circuits in the browser  
-- **API-Driven Content** – Fetch lesson data from a Node/Express backend  
+- **API-Driven Content** – Fetch lesson data from a Node/Express backend
+- **Interactive Graph** - Hover over to learn more about data points
 - **Responsive Design** – Accessible on desktop and mobile  
 
 ## Tech Stack
@@ -33,7 +29,7 @@ This repository houses both the frontend and backend code for a quantum-educatio
 - **Languages:** TypeScript, JavaScript, CSS  
 - **Frontend:** React (or Next.js)  
 - **Backend:** Node.js with Express  
-- **Build Tools:** npm / Yarn  
+- **Build Tools:** npm / Yarn
 
 ## Prerequisites
 
@@ -59,3 +55,29 @@ This repository houses both the frontend and backend code for a quantum-educatio
    npm install
 
 ## Running the App 
+- Backend (Server)
+  ```bash
+  cd server
+  npm run dev
+- Frontend
+  ```bash
+  cd frontend
+  npm run dev
+
+## Project Structure
+quantum_education_website/
+├── frontend/           # React-based SPA for interactive lessons
+│   ├── public/         # Static assets
+│   ├── src/
+│   │   ├── app/        # Pages / CSS/ Tailwind / global styles 
+│   │   ├── components/ # UI components (CustomSection, DotPlot etc)
+│   │   ├── context/    # Theme and Navbar context
+│   │   ├── types/      # Typescript custom data types
+│   │   ├── context/    # Theme and Navbar context
+│   │   └── utils/      # helper functions declared here
+│   └── package.json
+├── server/             # Node.js + Express API
+│   ├── app             # main server file
+│   ├── data.json       # json file to store data
+│   └── package.json
+├── README.md           # ← You are here
