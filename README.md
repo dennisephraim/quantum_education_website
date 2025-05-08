@@ -26,8 +26,8 @@ This repository houses both the frontend and backend code for a quantum-educatio
 
 ## Tech Stack
 
-- **Languages:** TypeScript, JavaScript, CSS  
-- **Frontend:** React (or Next.js)  
+- **Languages:** TypeScript, JavaScript, Tailwind CSS  
+- **Frontend:** React (or Next.js), Framewroks - React ChartJS, Motion
 - **Backend:** Node.js with Express  
 - **Build Tools:** npm / Yarn
 
