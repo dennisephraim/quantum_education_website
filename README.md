@@ -21,7 +21,7 @@ This repository houses both the frontend and backend code for a quantum-educatio
 ## Features
 
 - **API-Driven Content** – Fetch lesson data from a Node/Express backend
-- **Interactive Graph** - Hover over to learn more about data points
+- **Interactive Graph** - Hover over to learn more about data points (ChartJS)
 - **Responsive Design** – Accessible on desktop and mobile  
 
 ## Tech Stack
@@ -66,18 +66,18 @@ This repository houses both the frontend and backend code for a quantum-educatio
 
 ## Project Structure
 quantum_education_website/
-├── frontend/           # React-based SPA for interactive lessons
-│   ├── public/         # Static assets
-│   ├── src/
-│   │   ├── app/        # Pages / CSS/ Tailwind / global styles 
-│   │   ├── components/ # UI components (CustomSection, DotPlot etc)
-│   │   ├── context/    # Theme and Navbar context
-│   │   ├── types/      # Typescript custom data types
-│   │   ├── context/    # Theme and Navbar context
-│   │   └── utils/      # helper functions declared here
-│   └── package.json
-├── server/             # Node.js + Express API
-│   ├── app             # main server file
-│   ├── data.json       # json file to store data
-│   └── package.json
-├── README.md           # ← You are here
+- ├── frontend/           # React-based SPA for interactive lessons
+- │   ├── public/         # Static assets
+- │   ├── src/
+- │   │   ├── app/        # Pages / CSS/ Tailwind / global styles 
+- │   │   ├── components/ # UI components (CustomSection, DotPlot etc)
+- │   │   ├── context/    # Theme and Navbar context
+- │   │   ├── types/      # Typescript custom data types
+- │   │   ├── context/    # Theme and Navbar context
+- │   │   └── utils/      # helper functions declared here
+- │   └── package.json
+- ├── server/             # Node.js + Express API
+- │   ├── app             # main server file
+- │   ├── data.json       # json file to store data
+- │   └── package.json
+- ├── README.md           # ← You are here
