@@ -1,3 +1,11 @@
+export interface FlipCardProps {
+    frontImage: string;
+    backTitle: string;
+    backDescription: string;
+    width?: string;
+    height?: string;
+  }
+
 export interface QPUDataPoint {
     x: number
     y: number

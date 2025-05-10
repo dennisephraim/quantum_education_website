@@ -25,10 +25,10 @@ interface IntroProps {
 
 export default function Intro({ setShowDotPlot }: IntroProps) {
   const text = "<Hello | Quantum | World>"
-  const { showNavbar, setShowNavbar } = useShowNavbarContext()
+  const { setShowNavbar } = useShowNavbarContext()
 
   return (
-    <motion.div className={`relative h-[200vh] w-full bg-[#ededed] dark:bg-[#1d1d1d] ${showNavbar ? 'z-0' : 'z-20'}`}
+    <motion.div className={`relative h-[200vh] w-full bg-[#ededed] dark:bg-[#1d1d1d] `}
       initial="hidden"
       whileInView="show"
       transition={{ duration: 0.3 }}
@@ -72,10 +72,10 @@ export default function Intro({ setShowDotPlot }: IntroProps) {
         </motion.h1>
       </motion.div>
       <motion.h2
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.1 }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1}}
-        viewport={{ once: false, amount: 0.5, margin: "-100px 0px 100px 0px" }}
+        viewport={{ once: false, amount: 1, margin: "-100px 0px 100px 0px" }}
         className='justify-center flex pb-20 text-3xl'
       >
         History of Emerging Quantum Computers

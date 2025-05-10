@@ -12,8 +12,8 @@ export default function CardRow() {
         hidden: {},
         show: {
           transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.5,
+            delayChildren: 0.2,
+            staggerChildren: 0.3,
           },
         },
       }}
